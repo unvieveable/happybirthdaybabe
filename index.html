@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        }
+        body {
+        background-color: #a478d4;
+        }
+        .card {
+        width: 940px;
+        height: 550px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50px;
+        bottom: 0;
+        -webkit-perspective: 1200px;
+        perspective: 1200px;
+        transition: 1s;
+        }
+        .card:hover {
+        transform: rotate(-5deg);
+        }
+        .card:hover .outside {
+        transform: rotateY(-130deg);
+        }
+        .outside,
+        .inside {
+        height: 100%;
+        width: 70%;
+        position: absolute;
+        left: 30.1%;
+        }
+        .inside {
+        background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+        line-height: 1.8;
+        padding: 0 30px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: left;
+        left: 30%;
+        color: #000046;
+        }
+        .outside {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        z-index: 1;
+        transform-origin: left;
+        transition: 2s;
+        cursor: pointer;
+        }
+        .front,
+        .back {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        }
+        .front {
+        background-color: #ffffff;
+        }
+        .back {
+        transform: rotateY(180deg);
+        background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+        }
+        .cake {
+        width: 100%;
+        position: absolute;
+        bottom: 100px;
+        }
+        .top-layer,
+        .middle-layer,
+        .bottom-layer {
+        height: 80px;
+        width: 240px;
+        background-repeat: repeat;
+        background-size: 60px 100px;
+        background-position: 28px 0;
+        background-image: linear-gradient(
+            transparent 50px,
+            #994c10 50px,
+            #994c10 60px,
+            transparent 60px
+            ),
+            radial-gradient(circle at 30px 5px, #994c10 30px, #eac285 31px);
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        margin: auto;
+        }
+        .middle-layer {
+        transform: scale(0.85);
+        top: 6px;
+        }
+        .top-layer {
+        transform: scale(0.7);
+        top: 26px;
+        }
+        .candle {
+        height: 45px;
+        width: 15px;
+        background: repeating-linear-gradient(
+            45deg,
+            #fd3018 0,
+            #fd3018 5px,
+            #ffa89e 5px,
+            #ffa89e 10px
+        );
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 202px;
+        }
+        .candle:before {
+        content: "";
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        background-color: #ffa500;
+        border-radius: 0 50% 50% 50%;
+        bottom: 48px;
+        transform: rotate(45deg);
+        left: -1px;
+        }
+        .outside p {
+        font-size: 23px;
+        text-transform: uppercase;
+        margin-top: 70px;
+        text-align: center;
+        letter-spacing: 6px;
+        color: #000046;
+        }
+
+        .inside h1
+        {    
+        font-size: 70px;
+        line-height: 70px;
+        text-align: right;
+        }
+        .inside img {
+        width: 100px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="outside">
+        <div class="front">
+          <p>Happy <b>22nd</b><br/>Birthday, babe!</p>
+          <div class="cake">
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+            <div class="candle"></div>
+          </div>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="inside">
+        <p><b>My Dearest J,</b></p>
+        <p>I know things haven't been easy between us lately, and I just want to acknowledge that. Today is your special day, and despite everything, I want you to know that I’m thinking of you. I always do.</p>
+        <p><b>Happy Birthday, babe!</b> I hope you have a wonderful day filled with joy and laughter, not just today but in the days to come.</p>
+        <p>Who would have thought?<br/><i>My mother brought me into this world, but your mother, 22 years ago, brought my whole world into existence – you.</i></p>
+        <p>You deserve all the best things in life, my love, and I truly wish for your happiness and success in everything you do.</p>
+        <p><b>I love you always,<br/>Your V</b></p>
+        <!-- <h1>&#127873;</h1> -->
+        <img src="grootnstitch.png" alt="Groot and Stitch">
+      </div>
+    </div>
+  </body>
+</html>
